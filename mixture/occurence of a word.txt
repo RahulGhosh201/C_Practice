@@ -1,0 +1,22 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int soln(const char *s1, const char *s2){
+    int cnt=0;
+    const char *ptr=s1;
+    while((ptr=strstr(ptr,s2))!=NULL){
+        cnt++;
+        ptr+=strlen(s2);
+    }
+    return cnt;
+}
+
+
+int main() {
+    char s1[]="this is this a this";
+    char s2[]="this";
+    
+    printf("Ans: %d",soln(s1,s2));
+
+    return 0;
+}

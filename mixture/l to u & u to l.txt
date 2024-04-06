@@ -1,0 +1,23 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+char *soln(char *s){
+      for(int i=0;i<strlen(s);i++){
+          if(islower(s[i])){
+              s[i]=toupper(s[i]);
+          }
+          else if(isupper(s[i])){
+              s[i]=tolower(s[i]);
+          }
+      }  
+      return s;
+}
+
+int main() {
+    char s[]="This iS RaHul gHoSh";
+    printf("Before: %s\n",s);
+    soln(s);
+    printf("After: %s\n",s);
+}

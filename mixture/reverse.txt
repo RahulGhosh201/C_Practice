@@ -1,0 +1,28 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+void printArr(int arr[], int n){
+    for(int i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+}
+
+void soln(int *arr, int n){
+    for(int i=0;i<n/2;i++){
+        int temp=arr[i];
+        arr[i]=arr[n-i-1];
+        arr[n-i-1]=temp;
+    }
+}
+
+int main() {
+    int arr[]={1,5,4,3,8,10};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    printf("Before reverse: ");
+    printArr(arr,n);
+    printf("After reverse: ");
+    soln(arr,n);
+    printArr(arr,n);
+    return 0;
+}

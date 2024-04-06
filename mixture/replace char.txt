@@ -1,0 +1,21 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+
+char *soln(char *str, char a, char b){
+    int n=strlen(str);
+    for(int i=0;i<n;i++){
+        if(str[i]==a){
+            str[i]=b;
+        }
+    }
+    return str;
+}
+
+int main() {
+    char str[]="This is a is";
+    char a='i', b='w';
+    printf("Ans: %s",soln(str, a, b));
+
+    return 0;
+}

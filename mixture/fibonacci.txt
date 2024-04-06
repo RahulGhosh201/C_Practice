@@ -1,0 +1,46 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+void fibonacci(int n){
+    int first=0, second=1,next=0;
+    printf("%d ",first);
+    printf("%d ", second);
+    for(int i=0;i<n;i++){
+        if(i<=1){
+            next=i;
+        }
+        next=first+second;
+        first=second;
+        second=next;
+        printf("%d ",next);
+    }
+    printf("\n");
+}
+
+int main() {
+    int n=5;
+    fibonacci(n);
+    return 0;
+    
+}
+==========================================
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int fibonacci(int n){
+    if(n<=1) return n;
+    return fibonacci(n-1)+fibonacci(n-2);
+}
+
+void pf(int n){
+    for(int i=0;i<n;i++){
+        printf("%d ",fibonacci(i));
+    }
+    printf("\n");
+}
+
+int main() {
+    int n=5;
+    pf(n);
+    return 0;
+}

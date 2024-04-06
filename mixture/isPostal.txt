@@ -1,0 +1,29 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+#include <ctype.h>
+
+bool isPostal(char *str){
+    if(strlen(str)!=7) return false;
+    if(!isalpha(str[0])) return false;
+    if(!isalpha(str[2])) return false;
+    if(!isalpha(str[5])) return false;
+    if(!isdigit(str[1])) return false;
+    if(!isdigit(str[4])) return false;
+    if(!isdigit(str[6])) return false;
+    if(str[3]!=' ') return false;
+    return true;
+}
+
+//L8K 4B6
+int main() {
+    char str[]="L8K 4B6";
+    if(isPostal(str)){
+        printf("%s is a postal code",str);
+    }else{
+        printf("%s is not a postal code",str);
+    }
+
+    return 0;
+}

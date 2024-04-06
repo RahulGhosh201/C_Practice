@@ -1,0 +1,25 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+
+void soln(char *str){
+    int n=strlen(str);
+    int i=n-1;
+    while(i>0){
+        if(str[i]==' '||str[i]=='\n'||str[i]=='\t'||str[i]=='.'||str[i]==','){
+            i--;
+        }else{
+            break;
+        }
+    }
+    str[i+1]='\0';
+    // return str;
+}
+
+int main() {
+    char str[]="This is the way. \n\n\t ";
+    printf("Before: %s",str);
+    soln(str);
+    printf("After: %s",str);
+    return 0;
+}

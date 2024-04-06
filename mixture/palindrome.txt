@@ -1,0 +1,39 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<string.h>
+#include<stdbool.h>
+
+bool isPalindrome(char *str){
+    int n=strlen(str);
+    for(int i=0;i<n/2;i++){
+        if(str[i]!=str[n-i-1]){
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    char str1[]="nayan";
+    char str2[]="abcd";
+    char str3[]="abccba";
+    if(isPalindrome(str1))
+        printf("%s is palindrome", str1 );
+    else
+        printf("%s s not palindrome", str1);
+    printf("\n");
+    
+    if(isPalindrome(str2))
+        printf("%s is palindrome", str2 );
+    else
+        printf("%s s not palindrome", str2);
+    printf("\n");
+    
+    if(isPalindrome(str3))
+        printf("%s is palindrome", str3 );
+    else
+        printf("%s s not palindrome", str3);
+    printf("\n");
+    
+    
+}

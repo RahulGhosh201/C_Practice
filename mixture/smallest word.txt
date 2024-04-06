@@ -1,0 +1,33 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+
+int soln(char *str){
+    char nonwords[]=" .\n\t,";
+    int i=0, min=10000, count=0;
+    int len=strlen(str);
+    while(i<len){
+        count=0;//count k each time o te initial kora hche so that each word r len count korte pari individually
+        while(i<len){
+            if(strchr(nonwords, str[i])!=NULL){//mane nonwords khuje pelei break marbo
+                break;
+            }
+            i++;
+            count++;
+        }
+        if(count<min) min=count;
+        
+        while(i<len){
+            if(strchr(nonwords,str[i])==NULL) break;
+            i++;
+        }
+    }
+    return min;
+    
+}
+
+int main() {
+    char str[]="This is, the way.";
+    printf("Ans: %d\n",soln(str));
+    return 0;
+}

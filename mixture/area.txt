@@ -1,0 +1,11 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#define pi 3.14
+
+int main() {
+    double r=7;
+    double area=pi*r*r;
+    printf("Ans: %.2lf",area);
+
+    return 0;
+}

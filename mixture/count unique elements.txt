@@ -1,0 +1,24 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdbool.h>
+
+int soln(int arr[], int len){
+    int count=0;
+    for(int i=0;i<len;i++){
+        bool match_found=false;
+        for(int j=0;j<len;j++){
+            if(arr[i]==arr[j] && i!=j){
+                match_found=true;
+            }
+        }
+        if(!match_found) count++;
+    }
+    return count;
+}
+
+int main() {
+    int arr[]={1,2,3,4,2,4,5};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    printf("Ans: %d",soln(arr,n));
+    return 0;
+}

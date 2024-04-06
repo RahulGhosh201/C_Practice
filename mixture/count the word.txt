@@ -1,0 +1,31 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+
+int soln(char *str){
+    int len=strlen(str);
+    int i=0, count=0;
+    char nonwords[]=" .,\n\t";
+    for(int i=0;i<len;i++){
+        while(i<len){
+            if(strchr(nonwords, str[i])!=NULL){
+                break;
+            }
+            i++;
+        }
+        count++;
+        while(i<len){
+            if(strchr(nonwords,str[i])==NULL)
+                break;
+            i++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    char str[]="This is the way.";
+    printf("Ans: %d\n",soln(str));
+
+    return 0;
+}

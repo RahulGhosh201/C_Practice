@@ -1,0 +1,27 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+
+void soln(char *str, char key){
+    int i=0;
+    while(str[i]!='\0'){
+        if(str[i]==key){
+            int j=i;
+            while(str[j]!='\0'){
+                str[j]=str[j+1];
+                j++;
+            }
+        }
+        i++;
+    }
+}
+
+int main() {
+    char str[]="this is a bliss";
+    char key='i';
+    printf("Before: %s, str");
+    soln(str,key);
+    printf("After: %s",str);
+
+    return 0;
+}
